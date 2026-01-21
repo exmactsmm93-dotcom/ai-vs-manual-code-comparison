@@ -17,3 +17,16 @@ This project performs a comparative analysis of data processing and visualizatio
 To run these scripts, you will need:
 ```bash
 pip install pandas polars altair seaborn petl vegafusion
+
+## Key Findings from the Comparison Report
+
+### 1. Code Efficiency & Logic
+* **Manual Code:** Utilized specific Polars lazy evaluation techniques (`pl.scan_csv`) which are optimized for larger datasets and provide more granular control over data types.
+* **AI Code:** Tended to produce "one-size-fits-all" solutions. While functional, it sometimes missed the specific performance benefits of the Polars lazy API unless explicitly prompted.
+
+### 2. Visualization Accuracy
+* **Customization:** Manual implementation using Altair allowed for better axis scaling (e.g., scaling volume by $1e7$) and custom color palettes that made the Avocado data more readable.
+* **AI Limitations:** AI-generated plots often lacked fine-tuning for labels and legends, requiring manual "post-processing" to meet professional standards.
+
+### 3. The "Human in the Loop"
+* The study found that while AI is an excellent tool for rapid prototyping, a developer's understanding of the underlying library (Polars/Altair) is essential to catch errors in data filtering and to optimize performance.
