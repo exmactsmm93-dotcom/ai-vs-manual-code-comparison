@@ -1,32 +1,71 @@
-# AI vs. Manual Code Comparison: Data Analysis
+# AI vs. Manual Code Comparison: Data Analysis Project
 
-This project performs a comparative analysis of data processing and visualization using two different Python stacks. It also includes a case study comparing manually written code against AI-generated solutions.
+This project explores data analysis and visualization using high-performance Python libraries. It features a comparative study between manually written code and AI-generated solutions, focusing on efficiency, logic, and visualization quality.
 
-## 📊 Project Scope
+## Project Overview
 - **Datasets:** US Avocado Prices and Student Exam Performance.
-- **Manual Implementation:** Using `Pandas` and `Seaborn`.
-- **Advanced Implementation:** Using `Polars` (Lazy evaluation) and `Altair` (Declarative visualization).
-- **ETL:** Data transformation and loading into `SQLite3` using the `PETL` library.
+- **Technologies:** - **Data Handling:** `Polars` (Lazy Evaluation) vs. `Pandas`.
+  - **Visualization:** `Altair` (Declarative) vs. `Seaborn/Matplotlib`.
+  - **ETL:** `PETL` for data cleaning and migration to `SQLite3`.
 
-## 📁 Repository Structure
-- `/scripts`: Python scripts for data analysis and plotting.
-- `/data`: Source CSV files.
-- `/docs`: Comparison report detailing AI vs. Manual coding performance.
+## Key Findings from the Report
+Based on my comparison analysis (included in the `docs` folder):
 
-## 🛠️ Requirements
-To run these scripts, you will need:
-```bash
-pip install pandas polars altair seaborn petl vegafusion
+* **Manual Precision:** My manual code utilized Polars' `scan_csv` for lazy evaluation. This provides better memory management for large datasets compared to standard AI-generated scripts.
+* **Custom Visualization:** Manual plotting with Altair allowed for complex scaling (e.g., scaling Total Volume by $1e7$) which AI often overlooked, leading to clearer data storytelling.
+* **AI as an Assistant:** While AI is excellent for rapid prototyping and fixing syntax errors, human oversight is essential for fine-tuning axes, formatting labels, and handling specific data nuances.
 
-## Key Findings from the Comparison Report
+## Repository Structure
+- `/data`: Source CSV files (`avocado.csv`, `exams.csv`).
+- `/scripts`: Python scripts covering Pandas, Polars, Altair, and PETL implementations.
+- `/docs`: Full comparison report (`A00325707_Comparison_Report.pdf`).
 
-### 1. Code Efficiency & Logic
-* **Manual Code:** Utilized specific Polars lazy evaluation techniques (`pl.scan_csv`) which are optimized for larger datasets and provide more granular control over data types.
-* **AI Code:** Tended to produce "one-size-fits-all" solutions. While functional, it sometimes missed the specific performance benefits of the Polars lazy API unless explicitly prompted.
+## Installation & Usage
 
-### 2. Visualization Accuracy
-* **Customization:** Manual implementation using Altair allowed for better axis scaling (e.g., scaling volume by $1e7$) and custom color palettes that made the Avocado data more readable.
-* **AI Limitations:** AI-generated plots often lacked fine-tuning for labels and legends, requiring manual "post-processing" to meet professional standards.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/exmactsmm93-dotcom/ai-vs-manual-code-comparison.git](https://github.com/exmactsmm93-dotcom/ai-vs-manual-code-comparison.git)
 
-### 3. The "Human in the Loop"
-* The study found that while AI is an excellent tool for rapid prototyping, a developer's understanding of the underlying library (Polars/Altair) is essential to catch errors in data filtering and to optimize performance.
+2.**Install required libraries**
+ pip install polars altair pandas seaborn petl vegafusion numpy
+
+3.**Execute the analysis scripts**
+	python scripts/Q3_Q1PlotAltair.py
+
+4. Click the green **Commit changes...** button to save.
+
+---
+
+### 2. How to add a `requirements.txt` file (Highly Recommended)
+Instead of making people type a long `pip install` command, a `requirements.txt` file allows them to install everything at once. 
+
+**Steps to add it:**
+1.  Go to your main repository page: [ai-vs-manual-code-comparison](https://github.com/exmactsmm93-dotcom/ai-vs-manual-code-comparison).
+2.  Click **Add file** > **Create new file**.
+3.  Name the file exactly: `requirements.txt`
+4.  Paste this list into the file:
+    ```text
+    polars
+    altair
+    pandas
+    seaborn
+    petl
+    vegafusion
+    numpy
+    ```
+5.  Click **Commit changes...**
+
+
+---
+
+### 3. Final Step: Organizing your Files
+To make the "Execute" command (`python scripts/Q3_Q1PlotAltair.py`) work, you must move your files into folders. 
+
+**On your main GitHub page:**
+1. Click **Add file** > **Upload files**.
+2. **Crucial:** When you drag and drop your files, GitHub doesn't let you "create" folders easily in the upload window. It is best to **create the folders on your computer first** (put all `.py` files in a folder named `scripts`, and `.csv` files in a folder named `data`), then drag those whole folders into the GitHub upload box.
+3.
+4. 
+   
+   ```bash
+   git clone [https://github.com/exmactsmm93-dotcom/ai-vs-manual-code-comparison.git](https://github.com/exmactsmm93-dotcom/ai-vs-manual-code-comparison.git)
